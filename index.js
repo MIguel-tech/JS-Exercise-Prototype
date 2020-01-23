@@ -94,16 +94,22 @@ Car.prototype.fill = function(gallons) {
         + Should return a string "Playing with x", x being the favorite toy.
 */
 function Baby(name, age, favoriteToy) {
-
+  this.name = name;
+  this.age = age;
+  this.favoriteToy = favoriteToy;
 }
+Baby.prototype = Object.create(Person.prototype);
+Baby.prototype.play = function() {
+  return `playing with ${this.favoriteToy}`;
+};
 
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. Explicit binding - using call, apply or bind to identify meaning of this/
+  2. Global binding - when this is console logged the value will be the window console object.
+  3. New binding - a constructor function is used 'this' is the object created and returned by the constructor function. 
+  4. Implicit ginding - a function is called the object left of the dot gets the value of 'this'.
 */
 
 
